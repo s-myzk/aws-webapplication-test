@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Id": "Policy1733105178720",
+  "Statement": [
+      {
+          "Sid": "Stmt1733104675891",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:*",
+          "Resource": "arn:aws:s3:::2024-12-2-builders-test/*",
+          "Condition": {
+              "IpAddress": {
+                  "aws:SourceIp": "${ALLOWED_IP}"
+              }
+          }
+      }
+  ]
+}
